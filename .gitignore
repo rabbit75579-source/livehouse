@@ -1,0 +1,17 @@
+# 敏感資料：不上傳到 GitHub
+.env
+ig_session.json
+
+# 已處理的貼文 ID（本機狀態，不同步）
+processed_ids.json
+
+# Log 檔
+logs/
+
+# macOS 系統檔
+.DS_Store
+
+# Python 虛擬環境
+.venv/
+__pycache__/
+*.pyc

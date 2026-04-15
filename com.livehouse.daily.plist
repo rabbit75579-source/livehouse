@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.livehouse.daily.plist - macOS launchd 排程設定
+  每天早上 08:00 自動執行 run_daily.sh
+
+  安裝步驟：
+    1. 複製此檔到 ~/Library/LaunchAgents/
+       cp com.livehouse.daily.plist ~/Library/LaunchAgents/
+
+    2. 載入排程（每次登入後自動啟動，並馬上載入本次）
+       launchctl load ~/Library/LaunchAgents/com.livehouse.daily.plist
+
+    3. 確認已載入
+       launchctl list | grep livehouse
+
+  解除排程：
+       launchctl unload ~/Library/LaunchAgents/com.livehouse.daily.plist
+
+  手動立刻觸發測試（不等到 08:00）：
+       launchctl start com.livehouse.daily
+-->
+<plist version="1.0">
+<dict>
+
+  <!-- 唯一識別標籤，必須與檔名相符 -->
+  <key>Label</key>
+  <string>com.livehouse.daily</string>
+
+  <!-- 執行指令：用 /bin/bash 呼叫 run_daily.sh -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/tayenwu/Desktop/自用程式/爬文節目表/run_daily.sh</string>
+  </array>
+
+  <!-- 每天 08:00 執行 -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>8</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <!-- stdout / stderr 輸出路徑（launchd 本身的 wrapper log） -->
+  <key>StandardOutPath</key>
+  <string>/Users/tayenwu/Desktop/自用程式/爬文節目表/logs/launchd_out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/tayenwu/Desktop/自用程式/爬文節目表/logs/launchd_err.log</string>
+
+  <!-- 補充 PATH，確保 launchd 環境能找到 Homebrew Python / git -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/tayenwu</string>
+    <!-- ANTHROPIC_API_KEY 建議放在 .env 檔，此處保留作為備用 -->
+    <!-- 若要直接在 plist 設定，取消下面兩行的註解並填入 key -->
+    <!-- <key>ANTHROPIC_API_KEY</key> -->
+    <!-- <string>sk-ant-在此填入你的 API Key</string> -->
+  </dict>
+
+  <!-- 登入時自動載入（不需每次手動 load） -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <!-- 若錯過執行時間（例如電腦關機），下次開機後補跑一次 -->
+  <!-- 設為 true 可避免因關機而漏跑，但若 API 費用敏感可設 false -->
+  <key>StartOnMount</key>
+  <false/>
+
+</dict>
+</plist>
