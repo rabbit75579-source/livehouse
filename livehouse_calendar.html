@@ -133,14 +133,17 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-seri
 // 資料設定：events.json 存在同資料夾時自動讀取；否則用示範資料
 // ============================================================
 const VENUES = [
-  {id:'wall',    name:'The Wall',      color:'#378ADD', bg:'rgba(55,138,221,0.18)',  text:'#85B7EB'},
-  {id:'legacy',  name:'Legacy',        color:'#1D9E75', bg:'rgba(29,158,117,0.18)', text:'#5DCAA5'},
-  {id:'riverside',name:'河岸留言',     color:'#D85A30', bg:'rgba(216,90,48,0.18)',  text:'#F0997B'},
-  {id:'kkbox',   name:'KKBOX Studio',  color:'#D4537E', bg:'rgba(212,83,126,0.18)', text:'#ED93B1'},
-  {id:'pipe',    name:'Pipe Live',     color:'#639922', bg:'rgba(99,153,34,0.18)',  text:'#97C459'},
-  {id:'clapper', name:'Clapper',       color:'#BA7517', bg:'rgba(186,117,23,0.18)', text:'#EF9F27'},
-  {id:'corner',  name:'Corner',        color:'#7F77DD', bg:'rgba(127,119,221,0.18)',text:'#AFA9EC'},
-  {id:'lgb',     name:'LiveG Bar',     color:'#E24B4A', bg:'rgba(226,75,74,0.18)',  text:'#F09595'},
+  {id:'wall',     name:'The Wall',      color:'#378ADD', bg:'rgba(55,138,221,0.18)',  text:'#85B7EB'},
+  {id:'legacy',   name:'Legacy',        color:'#1D9E75', bg:'rgba(29,158,117,0.18)', text:'#5DCAA5'},
+  {id:'pipe',     name:'Pipe Live',     color:'#639922', bg:'rgba(99,153,34,0.18)',  text:'#97C459'},
+  {id:'revolver', name:'Revolver',      color:'#C0392B', bg:'rgba(192,57,43,0.18)',  text:'#E87C71'},
+  {id:'wildlab',  name:'野地方 Wildlab',color:'#5D8A3C', bg:'rgba(93,138,60,0.18)',  text:'#90C068'},
+  // ── 暫停用（帳號待確認）──
+  {id:'riverside',name:'河岸留言',      color:'#D85A30', bg:'rgba(216,90,48,0.18)',  text:'#F0997B'},
+  {id:'kkbox',    name:'KKBOX Studio',  color:'#D4537E', bg:'rgba(212,83,126,0.18)', text:'#ED93B1'},
+  {id:'clapper',  name:'Clapper',       color:'#BA7517', bg:'rgba(186,117,23,0.18)', text:'#EF9F27'},
+  {id:'corner',   name:'Corner',        color:'#7F77DD', bg:'rgba(127,119,221,0.18)',text:'#AFA9EC'},
+  {id:'lgb',      name:'LiveG Bar',     color:'#E24B4A', bg:'rgba(226,75,74,0.18)',  text:'#F09595'},
 ];
 const venueMap = {};
 VENUES.forEach(v => venueMap[v.id] = v);
