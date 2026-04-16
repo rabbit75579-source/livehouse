@@ -1,27 +1,35 @@
 [
   {
-    "date": "2025-04-19",
-    "venue": "pipe",
-    "name": "雨國 Kingdom of Rain × 盈希 ADM",
-    "time": "19:10",
-    "price": "$400",
-    "source_ig": "pipe_live_music"
+    "date": "2026-03-01",
+    "venue": "wall",
+    "name": "DOES",
+    "time": "",
+    "price": "$1800",
+    "source_ig": "thewalllivehouse"
   },
   {
-    "date": "2025-05-09",
-    "venue": "pipe",
-    "name": "OHAN × CITYMEMO城市被冬錄 × 無酵餅",
-    "time": "19:10",
-    "price": "$400",
-    "source_ig": "pipe_live_music"
+    "date": "2026-03-24",
+    "venue": "wall",
+    "name": "Mild Orange",
+    "time": "",
+    "price": "",
+    "source_ig": "thewalllivehouse"
   },
   {
     "date": "2026-04-03",
     "venue": "legacy",
-    "name": "Asiaboy禁藥王 × Akin Ka Na Lang × 戶川純 × 艾薇Ivy",
+    "name": "Asiaboy禁藥王",
     "time": "",
     "price": "",
     "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-04-03",
+    "venue": "wall",
+    "name": "大囊開唱",
+    "time": "",
+    "price": "$500",
+    "source_ig": "thewalllivehouse"
   },
   {
     "date": "2026-04-10",
@@ -32,28 +40,36 @@
     "source_ig": "pipe_live_music"
   },
   {
-    "date": "2026-04-10",
-    "venue": "pipe",
-    "name": "林同學樂團 × !CON × Spaceoutcomet",
-    "time": "",
-    "price": "",
-    "source_ig": "pipe_live_music"
-  },
-  {
     "date": "2026-04-18",
     "venue": "pipe",
     "name": "Soundstatues × Sulfur Creek × 派拉瑞",
-    "time": "19:00",
+    "time": "19:30",
+    "price": "$400",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-04-19",
+    "venue": "pipe",
+    "name": "雨國 Kingdom of Rain × 盈希 ADM",
+    "time": "19:10",
     "price": "$400",
     "source_ig": "pipe_live_music"
   },
   {
     "date": "2026-05-09",
     "venue": "legacy",
-    "name": "華語金曲之夜 我小時候",
+    "name": "華語金曲之夜 正宗我小時候",
     "time": "",
     "price": "",
     "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-05-09",
+    "venue": "pipe",
+    "name": "OHAN × CITYMEMO城市被忘錄 × 無餅餅",
+    "time": "19:10",
+    "price": "$400",
+    "source_ig": "pipe_live_music"
   },
   {
     "date": "2026-05-09",
@@ -68,13 +84,13 @@
     "venue": "legacy",
     "name": "VOOID × 海豚刑警",
     "time": "",
-    "price": "$1600",
+    "price": "",
     "source_ig": "legacy_taiwan"
   },
   {
     "date": "2026-06-27",
     "venue": "legacy",
-    "name": "SADOG × SHABBYBOYZ",
+    "name": "SADOG",
     "time": "",
     "price": "",
     "source_ig": "legacy_taiwan"
