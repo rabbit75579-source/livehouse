@@ -1,1 +1,90 @@
-[]
+[
+  {
+    "date": "2025-04-19",
+    "venue": "pipe",
+    "name": "雨國 Kingdom of Rain × 盈希 ADM",
+    "time": "19:10",
+    "price": "$400",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2025-05-09",
+    "venue": "pipe",
+    "name": "OHAN × CITYMEMO城市被冬錄 × 無酵餅",
+    "time": "19:10",
+    "price": "$400",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-04-03",
+    "venue": "legacy",
+    "name": "Asiaboy禁藥王 × Akin Ka Na Lang × 戶川純 × 艾薇Ivy",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-04-10",
+    "venue": "pipe",
+    "name": "林同學樂團 × ICON × Spaceoutcomet",
+    "time": "",
+    "price": "",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-04-10",
+    "venue": "pipe",
+    "name": "林同學樂團 × !CON × Spaceoutcomet",
+    "time": "",
+    "price": "",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-04-18",
+    "venue": "pipe",
+    "name": "Soundstatues × Sulfur Creek × 派拉瑞",
+    "time": "19:00",
+    "price": "$400",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-05-09",
+    "venue": "legacy",
+    "name": "華語金曲之夜 我小時候",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-05-09",
+    "venue": "wildlab",
+    "name": "Luca Bonaccorsi × vicedawg777 × chengh",
+    "time": "19:00",
+    "price": "",
+    "source_ig": "wildlab.tw"
+  },
+  {
+    "date": "2026-05-16",
+    "venue": "legacy",
+    "name": "VOOID × 海豚刑警",
+    "time": "",
+    "price": "$1600",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-06-27",
+    "venue": "legacy",
+    "name": "SADOG × SHABBYBOYZ",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-07-17",
+    "venue": "legacy",
+    "name": "鄭宜農 Enno Cheng",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  }
+]
