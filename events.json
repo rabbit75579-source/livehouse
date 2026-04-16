@@ -1,24 +1,8 @@
 [
   {
-    "date": "2026-03-01",
-    "venue": "wall",
-    "name": "DOES",
-    "time": "",
-    "price": "$1800",
-    "source_ig": "thewalllivehouse"
-  },
-  {
-    "date": "2026-03-24",
-    "venue": "wall",
-    "name": "Mild Orange",
-    "time": "",
-    "price": "",
-    "source_ig": "thewalllivehouse"
-  },
-  {
     "date": "2026-04-03",
     "venue": "legacy",
-    "name": "Asiaboy禁藥王",
+    "name": "Asiaboy禁藥王 × Akin Ka Na Lang × 戶川純 × 艾薇Ivy",
     "time": "",
     "price": "",
     "source_ig": "legacy_taiwan"
@@ -35,6 +19,14 @@
     "date": "2026-04-10",
     "venue": "pipe",
     "name": "林同學樂團 × ICON × Spaceoutcomet",
+    "time": "",
+    "price": "",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-04-10",
+    "venue": "pipe",
+    "name": "林同學樂團 × !CON × Spaceoutcomet",
     "time": "",
     "price": "",
     "source_ig": "pipe_live_music"
