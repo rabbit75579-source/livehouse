@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台北 Livehouse 演出節目</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0e0f;
+  --surface: #1a1a1c;
+  --surface2: #242427;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.15);
+  --text: #f0efe8;
+  --text2: rgba(240,239,232,0.55);
+  --text3: rgba(240,239,232,0.3);
+  --accent: #c8f060;
+  --accent2: #8fe0c0;
+  --red: #ff6b6b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;min-height:100vh;font-size:14px}
+.mono{font-family:'Space Mono',monospace}
+
+/* Layout */
+.app{max-width:980px;margin:0 auto;padding:2rem 1.25rem}
+
+/* Header */
+.site-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:0.5px solid var(--border)}
+.site-title{font-size:22px;font-weight:700;letter-spacing:-0.5px}
+.site-title span{color:var(--accent)}
+.site-sub{font-size:11px;color:var(--text3);font-family:'Space Mono',monospace;margin-top:4px}
+.view-toggle{display:flex;gap:2px;background:var(--surface2);border-radius:8px;padding:3px}
+.vbtn{padding:6px 16px;border:none;border-radius:6px;font-size:12px;cursor:pointer;background:transparent;color:var(--text2);font-family:'Noto Sans TC',sans-serif;transition:all 0.2s}
+.vbtn.active{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.4)}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.75rem;align-items:center}
+.filter-label{font-size:11px;color:var(--text3);font-family:'Space Mono',monospace;margin-right:4px}
+.chip{padding:4px 12px;border-radius:20px;font-size:12px;cursor:pointer;border:0.5px solid var(--border2);background:transparent;color:var(--text2);transition:all 0.15s;white-space:nowrap}
+.chip:hover{border-color:rgba(255,255,255,0.3);color:var(--text)}
+.chip.on{color:#0e0e0f;font-weight:500;border-color:transparent}
+
+/* Calendar */
+.cal-nav{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.cal-month-label{font-size:16px;font-weight:500;font-family:'Space Mono',monospace;color:var(--accent);min-width:120px}
+.nav-btn{width:28px;height:28px;border-radius:6px;border:0.5px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.nav-btn:hover{background:var(--surface2);color:var(--text)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+.dow{font-size:10px;color:var(--text3);text-align:center;padding:6px 0;font-family:'Space Mono',monospace}
+.day{min-height:58px;border-radius:6px;border:0.5px solid var(--border);padding:5px 6px;cursor:pointer;background:var(--surface);transition:all 0.15s;position:relative}
+.day:hover{border-color:var(--border2);background:var(--surface2)}
+.day.today{border-color:var(--accent);background:rgba(200,240,96,0.06)}
+.day.sel{border-color:var(--accent2);background:rgba(143,224,192,0.1)}
+.day.other{opacity:0.25;pointer-events:none}
+.day .dn{font-size:11px;color:var(--text3);margin-bottom:3px;font-family:'Space Mono',monospace}
+.day.today .dn{color:var(--accent);font-weight:700}
+.dots{display:flex;flex-wrap:wrap;gap:2px}
+.dot{width:5px;height:5px;border-radius:50%}
+
+/* Day panel */
+.day-panel{margin-top:1rem;background:var(--surface);border-radius:10px;border:0.5px solid var(--border2);padding:1.25rem;animation:fadeIn 0.2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.dp-title{font-size:13px;color:var(--text2);font-family:'Space Mono',monospace;margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--border)}
+.dp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.ecard{background:var(--surface2);border-radius:8px;padding:12px 14px;border:0.5px solid var(--border)}
+.ecard-venue{font-size:11px;font-weight:500;padding:2px 8px;border-radius:12px;display:inline-block;margin-bottom:8px}
+.ecard-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:5px;line-height:1.4}
+.ecard-meta{font-size:12px;color:var(--text2);font-family:'Space Mono',monospace}
+.ecard-price{font-size:11px;color:var(--text3);margin-top:3px}
+.no-ev{font-size:13px;color:var(--text3);padding:8px 0}
+
+/* List view */
+.list-wrap{display:flex;flex-direction:column}
+.date-group{margin-bottom:1.5rem}
+.dg-header{font-size:11px;font-family:'Space Mono',monospace;color:var(--text3);padding:0 0 8px;border-bottom:0.5px solid var(--border);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.dg-header .dg-date{color:var(--accent2)}
+.dg-header .dg-count{background:var(--surface2);padding:1px 7px;border-radius:10px;color:var(--text3)}
+.lcard{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:8px;border:0.5px solid var(--border);padding:11px 14px;margin-bottom:6px;transition:all 0.15s}
+.lcard:hover{border-color:var(--border2);background:var(--surface2)}
+.lcard-venue-bar{width:3px;height:36px;border-radius:2px;flex-shrink:0}
+.lcard-info{flex:1}
+.lcard-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px}
+.lcard-sub{font-size:12px;color:var(--text2)}
+.lcard-venue-tag{font-size:11px;font-weight:500;padding:2px 8px;border-radius:10px;display:inline-block;margin-right:6px}
+.lcard-right{text-align:right;flex-shrink:0}
+.lcard-time{font-size:12px;font-family:'Space Mono',monospace;color:var(--text2)}
+.lcard-price{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* Status */
+.status{font-size:11px;color:var(--text3);font-family:'Space Mono',monospace;margin-top:2rem;padding-top:1rem;border-top:0.5px solid var(--border);display:flex;align-items:center;gap:6px}
+.status-dot{width:5px;height:5px;border-radius:50%;background:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="site-header">
+    <div>
+      <div class="site-title">台北 <span>Livehouse</span> 演出節目</div>
+      <div class="site-sub mono">TAIPEI LIVE MUSIC CALENDAR</div>
+    </div>
+    <div class="view-toggle">
+      <button class="vbtn active" id="btn-cal" onclick="switchView('cal')">日曆</button>
+      <button class="vbtn" id="btn-list" onclick="switchView('list')">清單</button>
+    </div>
+  </div>
+
+  <div class="filters">
+    <span class="filter-label mono">VENUE /</span>
+    <div id="chips"></div>
+  </div>
+
+  <div id="cal-view">
+    <div class="cal-nav">
+      <button class="nav-btn" onclick="changeMonth(-1)">&#8592;</button>
+      <div class="cal-month-label mono" id="month-label"></div>
+      <button class="nav-btn" onclick="changeMonth(1)">&#8594;</button>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div id="day-panel"></div>
+  </div>
+
+  <div id="list-view" style="display:none">
+    <div class="list-wrap" id="list-container"></div>
+  </div>
+
+  <div class="status"><span class="status-dot"></span><span id="status-text">載入資料中...</span></div>
+</div>
+
+<script>
+// ============================================================
+// 資料設定：events.json 存在同資料夾時自動讀取；否則用示範資料
+// ============================================================
+const VENUES = [
+  {id:'wall',     name:'The Wall',      color:'#378ADD', bg:'rgba(55,138,221,0.18)',  text:'#85B7EB'},
+  {id:'legacy',   name:'Legacy',        color:'#1D9E75', bg:'rgba(29,158,117,0.18)', text:'#5DCAA5'},
+  {id:'pipe',     name:'Pipe Live',     color:'#639922', bg:'rgba(99,153,34,0.18)',  text:'#97C459'},
+  {id:'revolver', name:'Revolver',      color:'#C0392B', bg:'rgba(192,57,43,0.18)',  text:'#E87C71'},
+  {id:'wildlab',  name:'野地方 Wildlab',color:'#5D8A3C', bg:'rgba(93,138,60,0.18)',  text:'#90C068'},
+  // ── 暫停用（帳號待確認）──
+  {id:'riverside',name:'河岸留言',      color:'#D85A30', bg:'rgba(216,90,48,0.18)',  text:'#F0997B'},
+  {id:'kkbox',    name:'KKBOX Studio',  color:'#D4537E', bg:'rgba(212,83,126,0.18)', text:'#ED93B1'},
+  {id:'clapper',  name:'Clapper',       color:'#BA7517', bg:'rgba(186,117,23,0.18)', text:'#EF9F27'},
+  {id:'corner',   name:'Corner',        color:'#7F77DD', bg:'rgba(127,119,221,0.18)',text:'#AFA9EC'},
+  {id:'lgb',      name:'LiveG Bar',     color:'#E24B4A', bg:'rgba(226,75,74,0.18)',  text:'#F09595'},
+];
+const venueMap = {};
+VENUES.forEach(v => venueMap[v.id] = v);
+
+const now = new Date();
+const Y = now.getFullYear(), M = now.getMonth();
+function rd(dy, dm=0){
+  const d = new Date(Y, M+dm, dy);
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+const DEMO_EVENTS = [
+  {date:rd(5),  venue:'wall',     name:'夜貓組 × 老王樂隊 聯合巡演', time:'19:30', price:'$600'},
+  {date:rd(5),  venue:'legacy',   name:'Leo王 個人巡演「野生動物」',  time:'20:00', price:'$1200'},
+  {date:rd(8),  venue:'riverside',name:'滅火器樂團 成立20週年',       time:'19:00', price:'$800'},
+  {date:rd(8),  venue:'pipe',     name:'山城來的鬼 新專輯發行場',     time:'20:30', price:'$500'},
+  {date:rd(10), venue:'kkbox',    name:'Sunset Rollercoaster',         time:'20:00', price:'$1500'},
+  {date:rd(11), venue:'corner',   name:'拾參月 × Dear Dear',           time:'19:30', price:'$400'},
+  {date:rd(12), venue:'wall',     name:'椅子樂團 十週年演唱會',        time:'20:00', price:'$1000'},
+  {date:rd(13), venue:'clapper',  name:'小宇宙 × 浮現樂隊',           time:'19:00', price:'$350'},
+  {date:rd(15), venue:'legacy',   name:'Deca Joins 新專輯場',          time:'20:00', price:'$1400'},
+  {date:rd(15), venue:'riverside',name:'落日飛車 acoustic',            time:'18:30', price:'$900'},
+  {date:rd(16), venue:'pipe',     name:'透明雜誌 × 大貓',              time:'20:00', price:'$450'},
+  {date:rd(18), venue:'wall',     name:'Elephant Gym 亞洲巡演',        time:'20:00', price:'$1200'},
+  {date:rd(19), venue:'kkbox',    name:'HUSH + 陳珊妮',                time:'19:30', price:'$1600'},
+  {date:rd(20), venue:'corner',   name:'回聲樂團 × 白目',              time:'20:00', price:'$550'},
+  {date:rd(22), venue:'clapper',  name:'林生祥與樂團',                 time:'19:00', price:'$700'},
+  {date:rd(22), venue:'legacy',   name:'茄子蛋 全台巡演',              time:'20:00', price:'$1800'},
+  {date:rd(23), venue:'riverside',name:'1976 × 甜梅號',                time:'20:30', price:'$650'},
+  {date:rd(25), venue:'wall',     name:'美秀集團 × 大象體操',          time:'20:00', price:'$900'},
+  {date:rd(25), venue:'pipe',     name:'BOYV 出道首演',                time:'19:30', price:'$300'},
+  {date:rd(26), venue:'kkbox',    name:'盧廣仲 小型感謝場',            time:'20:00', price:'$2000'},
+  {date:rd(27), venue:'corner',   name:'四分衛 × 瘦子',               time:'19:00', price:'$750'},
+  {date:rd(28), venue:'legacy',   name:'草東沒有派對 開春特場',        time:'20:30', price:'$1500'},
+  {date:rd(29), venue:'clapper',  name:'The Chairs × Slowly',          time:'19:30', price:'$400'},
+  {date:rd(5,1),venue:'wall',     name:'自然捲 × 929',                 time:'20:00', price:'$600'},
+  {date:rd(7,1),venue:'legacy',   name:'SODAGREEN 再出發',             time:'20:00', price:'$2200'},
+  {date:rd(9,1),venue:'lgb',      name:'迷幻巡禮之夜',                 time:'21:00', price:'$300'},
+];
+
+let EVENTS = [];
+let activeVenues = new Set(VENUES.map(v => v.id));
+let currentMonth = new Date(Y, M, 1);
+let selectedDate = null;
+let currentView = 'cal';
+
+// 嘗試讀取 events.json，失敗則用示範資料
+async function loadEvents(){
+  try {
+    const r = await fetch('./events.json');
+    if(!r.ok) throw new Error();
+    EVENTS = await r.json();
+    document.getElementById('status-text').textContent = `已從 events.json 載入 ${EVENTS.length} 筆演出資料`;
+  } catch(e){
+    EVENTS = DEMO_EVENTS;
+    document.getElementById('status-text').textContent = '目前顯示示範資料 — 將 events.json 放在同資料夾即可載入真實資料';
+  }
+  init();
+}
+
+function init(){
+  buildChips();
+  renderCal();
+}
+
+function getFiltered(){
+  return EVENTS.filter(e => activeVenues.has(e.venue));
+}
+
+function buildChips(){
+  const el = document.getElementById('chips');
+  el.innerHTML = '';
+  VENUES.forEach(v => {
+    const c = document.createElement('span');
+    c.className = 'chip on';
+    c.textContent = v.name;
+    c.style.cssText = `background:${v.bg};color:${v.text};border-color:${v.color}40`;
+    c.dataset.id = v.id;
+    c.onclick = () => toggleVenue(v.id, c, v);
+    el.appendChild(c);
+  });
+}
+
+function toggleVenue(id, el, v){
+  if(activeVenues.has(id)){
+    if(activeVenues.size === 1) return;
+    activeVenues.delete(id);
+    el.className = 'chip';
+    el.style.cssText = '';
+  } else {
+    activeVenues.add(id);
+    el.className = 'chip on';
+    el.style.cssText = `background:${v.bg};color:${v.text};border-color:${v.color}40`;
+  }
+  currentView === 'cal' ? renderCal() : renderList();
+}
+
+function switchView(v){
+  currentView = v;
+  document.getElementById('btn-cal').className = 'vbtn' + (v==='cal'?' active':'');
+  document.getElementById('btn-list').className = 'vbtn' + (v==='list'?' active':'');
+  document.getElementById('cal-view').style.display = v==='cal' ? '' : 'none';
+  document.getElementById('list-view').style.display = v==='list' ? '' : 'none';
+  if(v === 'list') renderList();
+}
+
+function changeMonth(d){
+  currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth()+d, 1);
+  selectedDate = null;
+  renderCal();
+}
+
+function renderCal(){
+  const yr = currentMonth.getFullYear(), mo = currentMonth.getMonth();
+  document.getElementById('month-label').textContent =
+    `${yr}.${String(mo+1).padStart(2,'0')}`;
+
+  const grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+  ['SUN','MON','TUE','WED','THU','FRI','SAT'].forEach(d => {
+    const el = document.createElement('div');
+    el.className = 'dow mono'; el.textContent = d; grid.appendChild(el);
+  });
+
+  const first = new Date(yr, mo, 1).getDay();
+  const days = new Date(yr, mo+1, 0).getDate();
+  const filtered = getFiltered();
+  const byDate = {};
+  filtered.forEach(e => { if(!byDate[e.date]) byDate[e.date]=[]; byDate[e.date].push(e); });
+
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+
+  for(let i=0;i<first;i++){
+    const el=document.createElement('div');
+    el.className='day other';
+    grid.appendChild(el);
+  }
+  for(let d=1;d<=days;d++){
+    const ds = `${yr}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const el = document.createElement('div');
+    let cls = 'day';
+    if(ds===todayStr) cls+=' today';
+    if(ds===selectedDate) cls+=' sel';
+    el.className = cls;
+    const evs = byDate[ds]||[];
+    let dots = '<div class="dots">';
+    evs.slice(0,6).forEach(e => {
+      dots += `<div class="dot" style="background:${venueMap[e.venue]?.color||'#888'}"></div>`;
+    });
+    dots += '</div>';
+    el.innerHTML = `<div class="dn">${d}</div>${dots}`;
+    el.onclick = () => { selectedDate=ds; renderCal(); showDayPanel(ds,evs); };
+    grid.appendChild(el);
+  }
+
+  if(!selectedDate) document.getElementById('day-panel').innerHTML='';
+}
+
+function showDayPanel(ds, evs){
+  const panel = document.getElementById('day-panel');
+  if(!evs.length){
+    panel.innerHTML=`<div class="day-panel"><div class="no-ev">這天沒有演出資料</div></div>`;
+    return;
+  }
+  const [y,m,d] = ds.split('-');
+  const wds=['日','一','二','三','四','五','六'];
+  const wd = new Date(ds).getDay();
+  let html = `<div class="day-panel"><div class="dp-title">${parseInt(m)} 月 ${parseInt(d)} 日（${wds[wd]}） — ${evs.length} 場演出</div><div class="dp-grid">`;
+  evs.forEach(e => {
+    const v = venueMap[e.venue]||{name:e.venue,bg:'rgba(255,255,255,0.1)',text:'#fff'};
+    html += `<div class="ecard">
+      <span class="ecard-venue" style="background:${v.bg};color:${v.text}">${v.name}</span>
+      <div class="ecard-name">${e.name}</div>
+      <div class="ecard-meta">${e.time||''}</div>
+      <div class="ecard-price">${e.price||''}</div>
+    </div>`;
+  });
+  html += '</div></div>';
+  panel.innerHTML = html;
+}
+
+function renderList(){
+  const filtered = getFiltered();
+  const byDate = {};
+  filtered.forEach(e => { if(!byDate[e.date]) byDate[e.date]=[]; byDate[e.date].push(e); });
+  const dates = Object.keys(byDate).sort();
+  const container = document.getElementById('list-container');
+  container.innerHTML = '';
+  const wds = ['日','一','二','三','四','五','六'];
+  if(!dates.length){
+    container.innerHTML='<div class="no-ev" style="padding:2rem 0;color:var(--text3)">沒有符合條件的演出</div>';
+    return;
+  }
+  dates.forEach(ds => {
+    const [y,m,d] = ds.split('-');
+    const wd = new Date(ds).getDay();
+    const evs = byDate[ds];
+    const group = document.createElement('div');
+    group.className = 'date-group';
+    let html = `<div class="dg-header mono"><span class="dg-date">${parseInt(m)}.${String(d).padStart(2,'0')} (${wds[wd]})</span><span class="dg-count">${evs.length} 場</span></div>`;
+    evs.forEach(e => {
+      const v = venueMap[e.venue]||{name:e.venue,color:'#888',bg:'rgba(255,255,255,0.1)',text:'#ccc'};
+      html += `<div class="lcard">
+        <div class="lcard-venue-bar" style="background:${v.color}"></div>
+        <div class="lcard-info">
+          <div class="lcard-name">${e.name}</div>
+          <div class="lcard-sub"><span class="lcard-venue-tag" style="background:${v.bg};color:${v.text}">${v.name}</span></div>
+        </div>
+        <div class="lcard-right">
+          <div class="lcard-time">${e.time||''}</div>
+          <div class="lcard-price">${e.price||''}</div>
+        </div>
+      </div>`;
+    });
+    group.innerHTML = html;
+    container.appendChild(group);
+  });
+}
+
+loadEvents();
+</script>
+</body>
+</html>
