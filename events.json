@@ -72,6 +72,30 @@
     "source_ig": "pipe_live_music"
   },
   {
+    "date": "2026-05-01",
+    "venue": "legacy",
+    "name": "施孝榮 × deca joins × ひとひら(hitohira) × 薛恩Sean × 藤原櫻 × NEXZ",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-05-01",
+    "venue": "pipe",
+    "name": "水管樂隊 × 北村蕗 Fuki Kitamura",
+    "time": "19:30",
+    "price": "$1200",
+    "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-05-01",
+    "venue": "wall",
+    "name": "hitohira",
+    "time": "",
+    "price": "$1300",
+    "source_ig": "thewalllivehouse"
+  },
+  {
     "date": "2026-05-09",
     "venue": "legacy",
     "name": "華語金曲之夜 正宗我小時候",
@@ -110,6 +134,14 @@
     "time": "19:10",
     "price": "$400",
     "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-06-06",
+    "venue": "legacy",
+    "name": "馬念先",
+    "time": "20:00",
+    "price": "$1350",
+    "source_ig": "legacy_taiwan"
   },
   {
     "date": "2026-06-27",
