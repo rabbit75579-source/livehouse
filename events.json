@@ -96,6 +96,14 @@
     "source_ig": "thewalllivehouse"
   },
   {
+    "date": "2026-05-08",
+    "venue": "pipe",
+    "name": "Fairy Ray × Lily Spacey × PiNkChAiN × Hanataro × CokaJi × Hubble West × TETSUTETSU",
+    "time": "23:00",
+    "price": "$400",
+    "source_ig": "pipe_live_music"
+  },
+  {
     "date": "2026-05-09",
     "venue": "legacy",
     "name": "華語金曲之夜 正宗我小時候",
@@ -148,6 +156,14 @@
     "venue": "legacy",
     "name": "SADOG",
     "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-07-04",
+    "venue": "legacy",
+    "name": "共振效應 高中熱音社成發",
+    "time": "19:00",
     "price": "",
     "source_ig": "legacy_taiwan"
   },
