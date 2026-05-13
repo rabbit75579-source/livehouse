@@ -72,6 +72,14 @@
     "source_ig": "pipe_live_music"
   },
   {
+    "date": "2026-04-30",
+    "venue": "legacy",
+    "name": "青原FIDA",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
     "date": "2026-05-01",
     "venue": "legacy",
     "name": "施孝榮 × deca joins × ひとひら(hitohira) × 薛恩Sean × 藤原櫻 × NEXZ",
@@ -144,12 +152,44 @@
     "source_ig": "pipe_live_music"
   },
   {
+    "date": "2026-05-16",
+    "venue": "wall",
+    "name": "Norioogam",
+    "time": "",
+    "price": "",
+    "source_ig": "thewalllivehouse"
+  },
+  {
+    "date": "2026-05-21",
+    "venue": "legacy",
+    "name": "Alfa Mist",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-05-23",
+    "venue": "pipe",
+    "name": "肥歐娜",
+    "time": "23:00",
+    "price": "$600",
+    "source_ig": "pipe_live_music"
+  },
+  {
     "date": "2026-06-06",
     "venue": "legacy",
     "name": "馬念先",
     "time": "20:00",
     "price": "$1350",
     "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-06-19",
+    "venue": "wall",
+    "name": "MOTIF HIVE × Dazelive × ARIES FALL",
+    "time": "19:30",
+    "price": "$500",
+    "source_ig": "thewalllivehouse"
   },
   {
     "date": "2026-06-27",
