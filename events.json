@@ -184,12 +184,28 @@
     "source_ig": "pipe_live_music"
   },
   {
+    "date": "2026-06-05",
+    "venue": "revolver",
+    "name": "羅斯福放送 ft. 官靖剛 × ana",
+    "time": "22:30",
+    "price": "",
+    "source_ig": "revolvertaipei"
+  },
+  {
     "date": "2026-06-06",
     "venue": "legacy",
     "name": "馬念先",
     "time": "20:00",
     "price": "$1350",
     "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-06-06",
+    "venue": "pipe",
+    "name": "隨性樂團 × 核果人",
+    "time": "19:00",
+    "price": "$800",
+    "source_ig": "pipe_live_music"
   },
   {
     "date": "2026-06-18",
@@ -238,6 +254,14 @@
     "time": "",
     "price": "",
     "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-08-09",
+    "venue": "wall",
+    "name": "MILLI",
+    "time": "",
+    "price": "",
+    "source_ig": "thewalllivehouse"
   },
   {
     "date": "2026-10-10",
