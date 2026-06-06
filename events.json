@@ -184,6 +184,14 @@
     "source_ig": "pipe_live_music"
   },
   {
+    "date": "2026-05-29",
+    "venue": "legacy",
+    "name": "艾蜜莉AMILI",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
     "date": "2026-06-05",
     "venue": "revolver",
     "name": "羅斯福放送 ft. 官靖剛 × ana",
@@ -222,6 +230,14 @@
     "time": "19:30",
     "price": "$500",
     "source_ig": "thewalllivehouse"
+  },
+  {
+    "date": "2026-06-21",
+    "venue": "pipe",
+    "name": "麥琪麥琪MakeMake × 月宵◇クレシェンテ",
+    "time": "18:40",
+    "price": "$400",
+    "source_ig": "pipe_live_music"
   },
   {
     "date": "2026-06-27",
