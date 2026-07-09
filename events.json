@@ -304,6 +304,14 @@
     "source_ig": "pipe_live_music"
   },
   {
+    "date": "2026-07-14",
+    "venue": "revolver",
+    "name": "Bonika Soda(JP) × Y.F Tamashi × 戴向誰元丹 × weiii",
+    "time": "20:00",
+    "price": "$450",
+    "source_ig": "revolvertaipei"
+  },
+  {
     "date": "2026-07-17",
     "venue": "legacy",
     "name": "鄭宜農 Enno Cheng",
@@ -333,6 +341,14 @@
     "name": "陳建年",
     "time": "",
     "price": "$1680",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-08-08",
+    "venue": "legacy",
+    "name": "AMILI TRAGEDIAN 悲劇演員",
+    "time": "",
+    "price": "$800",
     "source_ig": "legacy_taiwan"
   },
   {
