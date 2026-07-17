@@ -345,6 +345,14 @@
   },
   {
     "date": "2026-07-31",
+    "venue": "legacy",
+    "name": "落日飛車國國 × 宇宙人小玉 × 林貓王 × 李英宏 × DJ Didilong × 鄭宜農 × Leo王 × 陳德政 × DJ Mykal a.k.a林哲儀",
+    "time": "21:00",
+    "price": "$999",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-07-31",
     "venue": "pipe",
     "name": "阿夫Suhf × HengJones大亨 × BARDI × WE GOOD × DuSang × 陳宥豪",
     "time": "19:00",
@@ -436,6 +444,14 @@
     "venue": "legacy",
     "name": "波羅密 Borome ボロメ × 鯊魚煙囪 Shark Chimney × 煮過頭 OverCook",
     "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-09-04",
+    "venue": "legacy",
+    "name": "質感流氓",
+    "time": "20:00",
     "price": "",
     "source_ig": "legacy_taiwan"
   },
