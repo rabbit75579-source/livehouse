@@ -336,6 +336,14 @@
     "source_ig": "revolvertaipei"
   },
   {
+    "date": "2026-07-21",
+    "venue": "legacy",
+    "name": "SoulFa 靈魂沙發",
+    "time": "12:00",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
     "date": "2026-07-25",
     "venue": "pipe",
     "name": "upright磊落 × 範例三 × 韓森",
@@ -424,6 +432,14 @@
     "source_ig": "legacy_taiwan"
   },
   {
+    "date": "2026-08-22",
+    "venue": "pipe",
+    "name": "胖虎 × 碎紙花 × 烈鷹",
+    "time": "19:00",
+    "price": "$700",
+    "source_ig": "pipe_live_music"
+  },
+  {
     "date": "2026-08-29",
     "venue": "legacy",
     "name": "馬念先",
@@ -468,6 +484,14 @@
     "venue": "legacy",
     "name": "童童眾生相",
     "time": "19:30",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-12-06",
+    "venue": "legacy",
+    "name": "ゲシュタルト乙女 (Gestalt Girl)",
+    "time": "",
     "price": "",
     "source_ig": "legacy_taiwan"
   },
