@@ -377,6 +377,14 @@
   },
   {
     "date": "2026-08-01",
+    "venue": "legacy",
+    "name": "公館青少年 GGteens × 2026 RYEOWOOK'S AGIT CONCERT",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-08-01",
     "venue": "pipe",
     "name": "ASH DA HERO",
     "time": "18:00",
@@ -472,6 +480,14 @@
     "source_ig": "legacy_taiwan"
   },
   {
+    "date": "2026-08-21",
+    "venue": "revolver",
+    "name": "53mo × 威廉 × 陳涵 × 安豬",
+    "time": "22:30",
+    "price": "",
+    "source_ig": "revolvertaipei"
+  },
+  {
     "date": "2026-08-22",
     "venue": "legacy",
     "name": "GiyuTjuljaviya 張淦勛",
@@ -550,6 +566,14 @@
     "time": "19:00",
     "price": "$400",
     "source_ig": "pipe_live_music"
+  },
+  {
+    "date": "2026-09-11",
+    "venue": "legacy",
+    "name": "Legacy TERA 華語金曲之夜",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
   },
   {
     "date": "2026-09-11",
