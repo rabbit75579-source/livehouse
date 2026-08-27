@@ -552,6 +552,14 @@
     "source_ig": "pipe_live_music"
   },
   {
+    "date": "2026-09-01",
+    "venue": "wildlab",
+    "name": "野地方",
+    "time": "",
+    "price": "",
+    "source_ig": "wildlab.tw"
+  },
+  {
     "date": "2026-09-03",
     "venue": "legacy",
     "name": "波羅密 Borome ボロメ × 鯊魚煙囪 Shark Chimney × 煮過頭 OverCook",
@@ -566,6 +574,14 @@
     "time": "20:00",
     "price": "",
     "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-09-04",
+    "venue": "pipe",
+    "name": "水管樂隊 × the neverminds × 華流金曲",
+    "time": "20:00",
+    "price": "$1000",
+    "source_ig": "pipe_live_music"
   },
   {
     "date": "2026-09-06",
@@ -636,6 +652,14 @@
     "venue": "legacy",
     "name": "童童眾生相",
     "time": "19:30",
+    "price": "",
+    "source_ig": "legacy_taiwan"
+  },
+  {
+    "date": "2026-10-17",
+    "venue": "legacy",
+    "name": "FLESH × JUICER",
+    "time": "",
     "price": "",
     "source_ig": "legacy_taiwan"
   },
