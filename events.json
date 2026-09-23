@@ -742,5 +742,13 @@
     "time": "19:00",
     "price": "",
     "source_ig": "revolvertaipei"
+  },
+  {
+    "date": "2026-12-27",
+    "venue": "legacy",
+    "name": "回聲樂團 Echo of Your Soul",
+    "time": "",
+    "price": "",
+    "source_ig": "legacy_taiwan"
   }
 ]
